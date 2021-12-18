@@ -1,16 +1,13 @@
 import time
 
-def before_after(func):
-    def wrapper(*args):
-        print("Before")
-        func(*args)
-        print("After")
+def timer(func):
+    def wrapper():
+        before=time.time()
+        func()
+        print("Function took: ",time.time()-before," seconds")
     return wrapper
 
-class Test:
-    @before_after
-    def decorated_method(self):
-        print("run")
-    
-t=Test()
-t.decorated_method()
+def run():
+    time.sleep(3)
+
+run() 
