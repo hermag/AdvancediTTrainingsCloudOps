@@ -7,6 +7,7 @@ def timer(func):
         print("Function took: ",time.time()-before," seconds")
     return wrapper
 
+@timer
 def run():
     time.sleep(3)
 
